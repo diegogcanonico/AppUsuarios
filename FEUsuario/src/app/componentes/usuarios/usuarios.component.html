@@ -1,0 +1,73 @@
+
+<div class="container mt-15">
+   <div class="row mt-4">
+        <div class="col-lg-15">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="title" >
+                        Lista de usuarios registrados en el sistema
+                    </h5>
+                    <table class="table">
+                        <tbody>
+                            <tr *ngFor="let user of listaDeUsuarios">
+                                <td>{{user.idUsuario}}</td>
+                                <td>{{user.userName}}</td>
+                                <td>{{user.nombre}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.telefono}}</td>
+                                <td><i  [routerLink]="['/gestiones', user ]" class="fas fa-user-edit text-success"></i></td>
+                                <td><i (click)="eliminarUsuario(user.idUsuario)" class="fas fa-user-times text-danger"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a [routerLink]="['/gestiones']"><button  class="btn btn-primary btn-lg" >Crear usuario</button></a>
+                </div>
+            </div>
+        </div>
+        
+
+        <!--<div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="title" >
+                        Cargar nuevo usuario
+                    </h5>
+                   <form [formGroup] = "form" (ngSubmit)="agregarUsuario()">
+                       <div class="input-group mb-3">
+                           <span class="input-group-text">
+                               <i class="fas fa-user"></i>
+                           </span>
+                           <input  formControlName="userName" type="text" class="form-control" placeholder="Username">
+                       </div>
+                       <div class="input-group mb-3">
+                           <span class="input-group-text">
+                               <i class="fas fa-file-signature"></i>
+                           </span>
+                           <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre">
+                       </div>
+                       <div class="input-group mb-3">
+                           <span class="input-group-text">
+                               <i class="fas fa-envelope"></i>
+                           </span>
+                           <input formControlName="email" type="text" class="form-control" placeholder="Email">
+                       </div>
+                       <div class="input-group mb-3">
+                           <span class="input-group-text">
+                               <i class="fas fa-phone-alt"></i>
+                           </span>
+                           <input formControlName="telefono" type="text" class="form-control" placeholder="Teléfono">
+                       </div>
+                    <div class="d-grid gap-2">
+                       <button type="submit" class="btn btn-primary btn-lg">Crear usuario</button>
+                   
+                   </div>
+                   </form>
+               </div>
+           </div>
+        </div>-->
+
+
+    </div>
+</div>
+
+

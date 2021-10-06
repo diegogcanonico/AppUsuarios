@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="row mt-4">
+         <div class="col-lg-6">
+             <div class="card">
+                 <div class="card-body">
+                 
+                     <h5 class="title" >
+                        Crear/Editar usuario
+                     </h5>
+                    <form [formGroup] = "form" (ngSubmit)="agregarUsuario()">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-user"
+                                    [class.green-icon]="this.form.get('userName')?.valid"
+                                    [class.red-icon]="this.form.get('userName')?.invalid && this.form.get('userName')?.touched"
+                                ></i>
+                            </span>
+                            <input  formControlName="userName"  minlength="3" type="text" class="form-control" placeholder="Username">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-file-signature"
+                                    [class.green-icon]="this.form.get('nombre')?.valid"
+                                    [class.red-icon]="this.form.get('nombre')?.invalid && this.form.get('nombre')?.touched"
+                                ></i>
+                            </span>
+                            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"
+                                    [class.green-icon]="this.form.get('email')?.valid"
+                                    [class.red-icon]="this.form.get('email')?.invalid && this.form.get('email')?.touched"
+                                ></i>
+                            </span>
+                            <input formControlName="email" type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fas fa-phone-alt"
+                                    [class.green-icon]="this.form.get('telefono')?.valid"
+                                    [class.red-icon]="this.form.get('telefono')?.invalid && this.form.get('telefono')?.touched"
+                                ></i>
+                            </span>
+                            <input formControlName="telefono" type="tel" class="form-control" placeholder="Teléfono">
+                        </div>
+                     <div class="d-grid gap-2">
+                        <button [disabled]="this.form.invalid" type="submit" class="btn btn-success btn-lg">Crear/modificar usuario</button>
+                        <button [routerLink]="['/usuarios']" class="btn btn-primary btn-lg" >Volver a la pantalla principal</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
